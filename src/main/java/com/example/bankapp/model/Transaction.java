@@ -43,4 +43,20 @@ public class Transaction {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
 }

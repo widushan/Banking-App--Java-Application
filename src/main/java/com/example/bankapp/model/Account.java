@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
 
-import org.springframework.boot.autoconfigure.pulsar.PulsarProperties.Transaction;
+import com.example.bankapp.model.Transaction;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -58,54 +58,82 @@ public class Account implements UserDetails {
     }
 
 
-    public void setUsername(String username2) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setUsername'");
-    }
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
 
-    public void setPassword(String encode) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setPassword'");
-    }
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 
-    public void setBalance(BigDecimal zero) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setBalance'");
-    }
+
+	public void setBalance(BigDecimal balance) {
+		this.balance = balance;
+	}
 
 
-    public BigDecimal getBalance() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getBalance'");
-    }
+
+	public BigDecimal getBalance() {
+		return balance;
+	}
 
 
-    public String getUsername() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUsername'");
-    }
+
+	public String getUsername() {
+		return username;
+	}
 
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAuthorities'");
-    }
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return authorities;
+	}
 
 
-    @Override
-    public String getPassword() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPassword'");
-    }
+
+	@Override
+	public String getPassword() {
+		return password;
+	}
 
 
-    public List<Transaction> getTransactions() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTransactions'");
-    }
+
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
+
+	public void setTransactions(List<Transaction> transactions) {
+		this.transactions = transactions;
+	}
+
+	public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
+		this.authorities = authorities;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
     
 
 }
